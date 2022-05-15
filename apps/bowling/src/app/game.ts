@@ -29,6 +29,9 @@ export class Book {
     if(diffbooknums == 3) {
       diffprice = diffbooknums * 100 * 0.90;
     }
+    if(diffbooknums == 4) {
+      diffprice = diffbooknums * 100 * 0.80;
+    }
     return sameprice + diffprice;
   }
 }
