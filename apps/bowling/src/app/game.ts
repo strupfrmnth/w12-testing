@@ -33,7 +33,8 @@ export class Book {
       diffprice = diffbooknums * 100 * 0.80;
     }
     if(diffbooknums >= 5) {
-      diffprice = diffbooknums * 100 * 0.75;
+      diffprice = 5 * 100 * 0.75;
+      diffprice += (diffbooknums-5) * 100;
     }
     return sameprice + diffprice;
   }
