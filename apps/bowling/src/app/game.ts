@@ -16,7 +16,7 @@ export class Book {
       if(this.buys[i] > 0) {
         diffbooknums++;
         if(diffbooknums == 1) onlyonetypebokknums = this.buys[i];
-        samebooknums += this.buys[i]-1;
+        samebooknums = this.buys[i]-1;
         sameprice += samebooknums * 100;
       }
     }
