@@ -7,13 +7,25 @@ export class Book {
   }
 
   get price() {
-    let price = 0;
+    let diffprice = 0;
+    let sameprice = 0;
     let diffbooknums = 0;
+    let samebooknums = 0;
+    let onlyonetypebokknums = 0;
     for(let i = 0; i < this.currbuy; i++) {
-      if(this.buys[i] > 0) diffbooknums++;
-      price += this.buys[i] * 100;
+      if(this.buys[i] > 0) {
+        diffbooknums++;
+        if(diffbooknums == 1) onlyonetypebokknums = this.buys[i];
+        samebooknums += this.buys[i]-1;
+        sameprice += samebooknums * 100;
+      }
     }
-    if(diffbooknums == 2) price *= 0.95;
-    return price;
+    if(diffbooknums == 1) {
+      return onlyonetypebokknums * 100;
+    }
+    if(diffbooknums == 2) {
+      diffprice = diffbooknums * 100 * 0.95;
+    }
+    return sameprice + diffprice;
   }
 }
