@@ -47,4 +47,11 @@ describe('Book', () => {
     book.buy(2);
     expect(book.price).toBe(470);
   });
+  test('buy 4 books with 4 types', () => {
+    book.buy(1);
+    book.buy(1);
+    book.buy(1);
+    book.buy(1);
+    expect(book.price).toBe(320);
+  });
 });
